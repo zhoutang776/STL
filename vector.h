@@ -49,6 +49,16 @@ public:
         return *this;
     }
 
+    _Tp&
+    operator[](std::size_t n){
+        return *(_M_start+n);
+    };
+
+    const _Tp&
+    operator[](std::size_t n) const {
+        return *(_M_start+n);
+    };
+
 
     ~vector(){free();}
     value_type* begin() const {return _M_start;}
